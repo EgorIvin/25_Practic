@@ -1,4 +1,4 @@
-1. клонируем HTTPS репозитория
+1. клонируем HTTPS репозитория - git clone
 2. (?) git config --global user.name "Name"
        git config --global user.email "Email" - неизвестно надо ли прописывать в начале 
 3. делаем изменения 
