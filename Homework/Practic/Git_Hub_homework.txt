@@ -126,6 +126,7 @@ GitHub Homework
  35. Сделать Commit changes (сохранить) изменения на веб интерфейсе.
      commit changes
  36. На веб интерфейсе модифицировать файл bug_report.xml, добавить баг репорт в формате XML.
+
 <?xml version="1.0"?>
   <Bug_report>
     
