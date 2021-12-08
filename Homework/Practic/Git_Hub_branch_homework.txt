@@ -38,8 +38,16 @@ esc :wq
    git push origin main
 7. В ветке CheckLists набросать структуру чек листа.
    git checkout CheckLists 
-   
-   
+   touch pattern_checklist.txt 
+   vim pattern_checklist.txt 
+ i 
+
+1. Заголовок - описание проекта
+2. Подзаголовок - назв функционала, отдел элемента
+3. Краткое описание теста 
+4. Номер приоритет проверка результат 
+
+esc :wq
    
 8. Запушить структуру на внешний репозиторий
    git add .
@@ -50,5 +58,9 @@ esc :wq
    new pull request 
    
 10. Синхронизировать Внешнюю и Локальную ветки Main
+    git checkout main 
+    git fetch 
+    git pull 
+   
     
     
