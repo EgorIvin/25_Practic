@@ -2,7 +2,11 @@ http://162.55.220.72:5005/first
 1. Отправить запрос.
 2. Статус код 200
 3. Проверить, что в body приходит правильный string.
-
+ пишем скрипт
+    pm.test("Body matches string", function () {
+    pm.expect(pm.response.text()).to.include("This is the first responce from server!")
+    })
+ИЛИ
 - закидываем URL в запрос (метод GET)
 - приходит ответ This is the first responce from server!
 - можно проверить статус код 200 через скрипт 
@@ -10,16 +14,48 @@ pm.test("Status code is 200", () => {
   pm.response.to.have.status(200);
 });
 - видим тест прошел 
--в боди приходит стринг, все окей
+- в боди приходит стринг, все окей
 
-http://162.55.220.72:5005/user_info_3
+   http://162.55.220.72:5005/user_info_3
 1. Отправить запрос.
+   
+   Send и в бади приходит джсон
+
 2. Статус код 200
+   
+Либо видим статус, либо пускаем тест 
+  pm.test("Status code is 200", () => {
+  pm.response.to.have.status(200);
+   });
+
 3. Спарсить response body в json.
+
+   const responseJson = pm.response.json ();
+   
 4. Проверить, что name в ответе равно name s request (name вбить руками.)
+    
+    pm.test("Person is Егор", () => {
+    const responseJson = pm.response.json();
+    pm.expect(responseJson.name).to.eql("Егор");
+    });   -  
+
 5. Проверить, что age в ответе равно age s request (age вбить руками.)
+   
+    pm.test("Age is 23", () => {
+    const responseJson = pm.response.json();
+    pm.expect(responseJson.age).to.eql("23");
+    });
+
 6. Проверить, что salary в ответе равно salary s request (salary вбить руками.)
+
+   pm.test("Salary is 120000", () => {
+   const responceJson = pm.response.json();
+   pm.expect(responceJson.salary).to.eql(120000)
+   });
+
 7. Спарсить request.
+   
+
 8. Проверить, что name в ответе равно name s request (name забрать из request.)
 9. Проверить, что age в ответе равно age s request (age забрать из request.)
 10. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
