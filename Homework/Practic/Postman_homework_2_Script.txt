@@ -30,9 +30,7 @@ pm.test("Status code is 200", () => {
 
 3. Спарсить response body в json.
 
-   pm.test("Pars responce" , function () {
-   var jsonData = pm.response.json();
-   });
+  let jsonData = pm.response.json();
    
 4. Проверить, что name в ответе равно name s request (name вбить руками.)
     
@@ -57,35 +55,70 @@ pm.test("Status code is 200", () => {
 
 7. Спарсить request.
   
-   pm.test("Parsing request" , function () {
-   var req = (request.data);
-   });   
+   let req = pm.request.data;
 
 8. Проверить, что name в ответе равно name s request (name забрать из request.)
  
-  pm.test("Name user is Egor", function () {
-  var a = pm.response.json();
-  var b = pm.request.name;
-  
-});
+    pm.test("The name name request", function () {
+    pm.expect(jsonData.name).to.eql(req.name);
+    });
+ 
 
 9. Проверить, что age в ответе равно age s request (age забрать из request.)
    
-
+    pm.test("The age age request", function () {
+    pm.expect(jsonData.age).to.eql(req.age);
+    });
 
 
 10. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
+
+    pm.test("The salary salary request" , function () {
+    pm.expect(jsonData.salary).to.eql((parseInt)(req.salary))   
+}) ;
+    
+
 11. Вывести в консоль параметр family из response.
+    
+   console.log(pm.response.json().family)    
+
 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
+   
+    pm.test("Salary 1.5 year = salary * 4", function (){
+    pm.expect(jsonData.family.u_salary_1_5_year).to.eql(req.salary*4)
+    });
 
 http://162.55.220.72:5005/object_info_3
-1. Отправить запрос.
-2. Статус код 200
+
+1. Отправить запрос. 
+   {{url}}/object_info_3 выставляем name age salary и send
+ 
+2. Статус код 200 
+   pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+}); 
+
 3. Спарсить response body в json.
+  var jsonData = pm.response.json () ;
+
 4. Спарсить request.
+  var req = request.data;
+
 5. Проверить, что name в ответе равно name s request (name забрать из request.)
+   pm.test("Name = name s request", function (){
+    pm.expect(jsonData.Егор).to.eql(req.name);
+});
+OR
+pm.test("Name = name s request", function (){
+    pm.expect(jsonData.name).to.eql(req[0].value);
+});
 6. Проверить, что age в ответе равно age s request (age забрать из request.)
+   pm.test("Age - age s request", function () {
+    pm.expect(jsonData.age).to.eql(req[1].value);
+});
 7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
+      
+
 8. Вывести в консоль параметр family из response.
 9. Проверить, что у параметра dog есть параметры name.
 10. Проверить, что у параметра dog есть параметры age.
