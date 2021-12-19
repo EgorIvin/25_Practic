@@ -30,7 +30,9 @@ pm.test("Status code is 200", () => {
 
 3. Спарсить response body в json.
 
-   const responseJson = pm.response.json ();
+   pm.test("Pars responce" , function () {
+   var jsonData = pm.response.json();
+   });
    
 4. Проверить, что name в ответе равно name s request (name вбить руками.)
     
@@ -54,10 +56,24 @@ pm.test("Status code is 200", () => {
    });
 
 7. Спарсить request.
-   
+  
+   pm.test("Parsing request" , function () {
+   var req = (request.data);
+   });   
 
 8. Проверить, что name в ответе равно name s request (name забрать из request.)
+ 
+  pm.test("Name user is Egor", function () {
+  var a = pm.response.json();
+  var b = pm.request.name;
+  
+});
+
 9. Проверить, что age в ответе равно age s request (age забрать из request.)
+   
+
+
+
 10. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
 11. Вывести в консоль параметр family из response.
 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
