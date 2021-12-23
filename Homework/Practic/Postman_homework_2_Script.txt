@@ -296,7 +296,7 @@ http://162.55.220.72:5005/user_info_2
 
 9. Проверить, что json response имеет параметр qa_salary_after_6_months
   
-    pm.test("QA SA;ARY AGTER 6 MONTHS",function(){
+    pm.test("QA SALARY AGTER 6 MONTHS",function(){
     pm.expect(jsonData.qa_salary_after_6_months).to.eql((parseInt)("240000"))
     });
 
@@ -325,11 +325,45 @@ http://162.55.220.72:5005/user_info_2
 });
 
 14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request.)
+
+     pm.test("start_qa_salary = salary from request", function (){
+    pm.expect(jsonData.start_qa_salary).to.eql(+req.salary)
+});
+
+
 15. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request.)
+
+    pm.test("qa_salary_after_6_months = salary*2" , function (){
+    pm.expect(jsonData.qa_salary_after_6_months).to.eql(req.salary*2)
+});
+
 16. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request.)
+    
+    pm.test("qa_salary_after_12_months = salary*2.7" , function (){
+    pm.expect(jsonData.qa_salary_after_12_months).to.eql(req.salary*2.7);
+});
+
 17. Проверить, что параметр qa_salary_after_1.5_year равен salary*3.3 из request (salary забрать из request.)
+   
+     pm.test("qa_salary_after_1.5_year = salary*3.3", function (){
+    pm.expect(jsonData["qa_salary_after_1.5_year"]).to.eql(req.salary*3.3)
+});
+     
 18. Проверить, что параметр qa_salary_after_3.5_years равен salary*3.8 из request (salary забрать из request.)
+   
+    pm.test("qa_salary_after_3.5_year = salary*3.8", function () {
+    pm.expect(jsonData["qa_salary_after_3.5_years"]).to.eql(req.salary*3.8)
+});
+   
 19. Проверить, что в параметре person, 1-й элемент из u_name равен salary из request (salary забрать из request.)
+    
+    pm.test("Person u_name = salary from request", function (){
+    pm.expect(jsonData.person.u_name[1]).to.eql((parseInt)(req.salary))
+});
+ 
 20. Проверить, что что параметр u_age равен age из request (age забрать из request.)
+   
+    
+
 21. Проверить, что параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request.)
 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
