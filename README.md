@@ -1,1 +1,1 @@
-![Egor rep](https://github-readme-stats.vercel.app/api?EgorIvin&theme=graywhite)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=EgorIvin&theme=graywhite)
