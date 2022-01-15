@@ -1,0 +1,42 @@
+1) Создать переменную типа String
+name = 'Egor'
+print(name)
+2) Создать переменную типа Integer
+age = 23
+print(age)
+3) Создать переменную типа Float
+weight = 86.2
+print(weight)
+4) Создать переменную типа Bytes
+bytes = b'type bytes'
+print(bytes)
+5) Создать переменную типа List
+list = [1,2,3,4, 'Egor']
+print(list)
+6) Создать переменную типа Tuple
+tuple = (1, 2.13, 'Egor')
+print(tuple)
+print(tuple[0]) - извлечь опрделенные данные из кортежа
+7) Создать переменную типа Set
+stringset = {"Egorr","Di","Doja"}
+print(stringset)
+8. Создать переменную типа Frozen set
+frozenset = frozenset([1,2,3,4,4])
+print(frozenset)
+9) Создать переменную типа Dict
+dict = dict(Egor='QA', salary= "120000" )
+print(dict)
+10) Вывести в консоль все выше перечисленные переменные с добавлением типа данных.
+ print
+11) Создать 2 переменные String, создать переменную в которой сканкатенируете эти переменные. Вывести в консоль.
+a = "Egor"
+b = "QA"
+print (a + " " + b)
+12) Вывести в одну строку переменные типа String и Integer используя “,” (Запятую)
+a = "Egor"
+b = 120000
+print(a , str(b))
+13) Вывести в одну строку переменные типа String и Integer используя “+” (Плюс)
+a = "Egor"
+b = 120000
+print(a + " " + str(b))
